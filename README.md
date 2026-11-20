@@ -1,41 +1,29 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (BazarDor)
+
+বাংলাদেশের নিত্যপ্রয়োজনীয় পণ্যের দৈনিক বাজার দর এক নজরে দেখার একটি Next.js অ্যাপ্লিকেশন।
+
+## Tech Stack
+- Next.js (App Router) + TypeScript
+- Tailwind CSS + DaisyUI
+- BetterAuth (Email/Password, Google, GitHub) + MongoDB
+- react-hot-toast
+
+## Key Features
+1. লাইভ প্রাইস টিকার (infinite marquee) ও বাংলা তারিখসহ নেভবার
+2. দাম বাড়া/কমার Top 6 সেকশন এবং সব পণ্যের রেসপন্সিভ গ্রিড
+3. ক্যাটাগরি পেজ — স্কেলেটন লোডিং ও বাংলা সংখ্যাসহ সঠিক সর্টিং
+4. প্রোটেক্টেড পণ্য-বিস্তারিত পেজ — সর্বনিম্ন/সর্বোচ্চ/গড় দাম ও বাজারভিত্তিক দাম
+5. BetterAuth দিয়ে সাইন ইন/সাইন আপ + সোশ্যাল লগইন + টোস্ট নোটিফিকেশন
+6. প্রোফাইল ও নাম আপডেট ফিচার, কাস্টম ৪০৪ পেজ
 
 ## Getting Started
-
-First, run the development server:
-
 ```bash
+npm install
+cp .env.example .env.local   # fill in values
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# bazar_rate
-show the rate of bazar product with authentication
->>>>>>> 7e848ae543aa70139c555e48111737bc9dab500c
+## Deployment (Vercel)
+Add all variables from `.env.example` to Project Settings → Environment Variables and set
+`BETTER_AUTH_URL` to your live URL. Add the callback URLs
+`https://<your-domain>/api/auth/callback/google` and `/github` in the OAuth apps.
