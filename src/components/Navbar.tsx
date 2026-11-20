@@ -13,9 +13,10 @@ export default function Navbar({ categories }: { categories: Category[] }) {
   const router = useRouter();
   const { data: session, isPending } = authClient.useSession();
   const [date, setDate] = useState("");
-
-  useEffect(() => setDate(banglaDate()), []);
-
+useEffect(() => {
+  const frame = requestAnimationFrame(() => setDate(banglaDate()));
+  return () => cancelAnimationFrame(frame);
+}, []);
   const handleSignOut = async () => {
     await authClient.signOut();
     toast.success("সফলভাবে সাইন আউট হয়েছে");

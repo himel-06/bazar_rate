@@ -1,11 +1,16 @@
 "use client";
-import { Toaster } from "react-hot-toast";
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+import { Toaster } from "sonner";
+
+export default function Providers({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       {children}
-      <Toaster position="top-center" />
+      <Toaster position="top-right" richColors />
     </>
   );
 }

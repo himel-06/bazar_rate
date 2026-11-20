@@ -6,6 +6,7 @@ import Providers from "@/components/Providers";
 import HeaderData from "@/components/HeaderData";
 import Footer from "@/components/Footer";
 
+
 const hind = Hind_Siliguri({
   subsets: ["bengali", "latin"],
   weight: ["400", "500", "600", "700"],

@@ -1,10 +1,21 @@
+
 import { MongoClient } from "mongodb";
 
-const uri = process.env.MONGODB_URI as string;
-if (!uri) throw new Error("MONGODB_URI is not set");
+const uri = process.env.MONGODB_URI;
 
-const globalForMongo = globalThis as unknown as { _mongo?: MongoClient };
-const client = globalForMongo._mongo ?? new MongoClient(uri);
-if (process.env.NODE_ENV !== "production") globalForMongo._mongo = client;
+if (!uri) {
+  throw new Error("MONGODB_URI is not configured");
+}
+
+const globalForMongo = globalThis as typeof globalThis & {
+  mongoClient?: MongoClient;
+};
+
+const client =
+  globalForMongo.mongoClient ?? new MongoClient(uri);
+
+if (process.env.NODE_ENV !== "production") {
+  globalForMongo.mongoClient = client;
+}
 
 export const db = client.db();
