@@ -1,5 +1,8 @@
 # 🛒 বাজার দর (BazarDor)
 
+wellcome to the site 
+
+
 বাংলাদেশের নিত্যপ্রয়োজনীয় পণ্যের দৈনিক বাজার দর এক নজরে দেখার একটি Next.js অ্যাপ্লিকেশন।
 
 ## Tech Stack
@@ -27,3 +30,7 @@ npm run dev
 Add all variables from `.env.example` to Project Settings → Environment Variables and set
 `BETTER_AUTH_URL` to your live URL. Add the callback URLs
 `https://<your-domain>/api/auth/callback/google` and `/github` in the OAuth apps.
+
+
+
+
